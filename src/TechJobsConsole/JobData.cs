@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -49,7 +50,7 @@ namespace TechJobsConsole
             {
                 string aValue = row[column];
 
-                if (aValue.Contains(value))
+                if (aValue.ToLower().Contains(value.ToLower()))
                 {
                     jobs.Add(row);
                 }
@@ -100,6 +101,12 @@ namespace TechJobsConsole
             }
 
             IsDataLoaded = true;
+        }
+
+
+        internal static List<Dictionary<string, string>> FindByValue(string searchTerm)
+        {
+            throw new NotImplementedException();
         }
 
         /*
